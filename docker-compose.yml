@@ -1,0 +1,75 @@
+version: '3'
+
+services:
+  database:
+    restart: always
+    image: mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - db-data:/var/lib/mysql/
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+    networks:
+      - inet
+
+  cache:
+    restart: always
+    image: redis
+    expose:
+      - 6379
+    networks:
+      - inet
+
+  email:
+    restart: always
+    build:
+      context: ./email
+    networks:
+      - inet
+
+  # backend:
+  #   restart: always
+  #   build:
+  #     context: ./backend
+  #   volumes:
+  #     - static:/vol/static/
+  #   networks:
+  #     - inet
+  #   depends_on:
+  #     - database
+  #     - cache
+  #     - email
+
+  frontend:
+    restart: always
+    build:
+      context: ./frontend
+    networks:
+      - inet
+    # depends_on:
+    #   - backend
+
+  webserver:
+    restart: always
+    build:
+      context: ./webserver
+    volumes:
+      - static:/vol/static/
+      - certbot:/etc/letsencrypt/
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - inet
+    depends_on:
+      # - backend
+      - frontend
+
+networks:
+  inet:
+
+volumes:
+  db-data:
+  static:
+  certbot:
