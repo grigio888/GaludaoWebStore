@@ -6,10 +6,15 @@
  -->
 
 <script>
-    import { IconHome, IconStarFilled, IconSearch, IconShoppingCart } from '@tabler/icons-svelte';
+    // ---------- IMPORTS ---------- //
+    import { IconHome, IconSearch, IconLogin } from '@tabler/icons-svelte';
+
+
+    // ----------- PROPS ----------- //
+    export let toShow;
 </script>
 
-<header>
+<header class:show={toShow}>
     <div></div>
     <navbar>
         <a href="#" class="td-none">
@@ -17,16 +22,12 @@
             <span>Pagina Inicial</span>
         </a>
         <a href="#" class="td-none">
-            <IconStarFilled size={18} />
-            <span>Destaques</span>
-        </a>
-        <a href="#" class="td-none">
             <IconSearch size={18} />
             <span>Procurar</span>
         </a>
         <a href="#" class="td-none">
-            <IconShoppingCart size={18} />
-            <span>Carrinho</span>
+            <IconLogin size={18} />
+            <span>Login</span>
         </a>
     </navbar>
 </header>
@@ -53,6 +54,13 @@
         border-bottom: 1px solid var(--themeColor);
 
         z-index: 5000;
+
+        opacity: 0;
+        transition: var(--transitionMedium) ease-in-out opacity;
+
+        &.show {
+            opacity: 1;
+        }
 
         navbar {
 

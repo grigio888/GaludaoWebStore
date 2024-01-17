@@ -2,7 +2,6 @@
 import { locale } from '$translate/store.js';
 
 export function handle({ event, resolve }) {
-    console.log('please, say something')
     event.locals = event.locals || {};
 
     // configuring language

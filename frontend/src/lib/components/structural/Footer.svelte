@@ -7,10 +7,14 @@
 -->
 
 <script>
+    // ---------- IMPORTS ---------- //
     import { IconMail, IconInfoCircleFilled, IconHelpTriangleFilled } from '@tabler/icons-svelte';
+
+    // ----------- PROPS ----------- //
+    export let toShow;
 </script>
 
-<footer>
+<footer class:show={toShow}>
     <navbar>
         <a href="#" class="td-none">
             <IconMail size={15} />
@@ -50,6 +54,13 @@
         border-top: 1px solid var(--themeColor);
 
         z-index: 4000;
+
+        opacity: 0;
+        transition: var(--transitionMedium) ease-in-out opacity;
+
+        &.show {
+            opacity: 1;
+        }
 
         navbar {
             justify-content: space-evenly;

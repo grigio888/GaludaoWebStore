@@ -2,6 +2,8 @@
     // ---------- IMPORTS ---------- //
     import './style.css';
 
+    import { page } from '$app/stores';
+
     import { locale } from '$translate/store.js';
 
     // ----------- PROPS ----------- //
@@ -14,9 +16,12 @@
 
     // ----------- LOGIC ----------- //
     $: locale.set(data.lang); // needed to set the language client-side
+
+    // the header and footer will be hided on the first page.
+    $: showNavigators = $page.url.pathname != '/'
 </script>
 
-<Header />
+<Header toShow={showNavigators} />
 
 <div>
     <slot />
@@ -24,7 +29,7 @@
 
 <BackgroundVideo />
 
-<Footer />
+<Footer toShow={showNavigators} />
 
 <style>
     div {
