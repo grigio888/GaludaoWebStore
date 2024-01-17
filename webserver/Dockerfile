@@ -9,6 +9,7 @@ COPY sites-enabled/frontend /etc/nginx/sites-enabled/frontend
 COPY includes /etc/nginx/includes
 COPY templates /etc/nginx/templates
 COPY entrypoint.sh /entrypoint.sh
+COPY static /vol/static
 
 # Copying Certbot files
 # This block must be setup when having access to the server, because

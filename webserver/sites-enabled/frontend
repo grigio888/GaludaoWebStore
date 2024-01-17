@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name galudaowebstore.local galudaowebstore.com.br *.galudaowebstore.com.br;
+    server_name galudaowebstore.local *.galudaowebstore.local galudaowebstore.com.br *.galudaowebstore.com.br;
 
     if ($ENVIRONMENT = production) {
         return 301 https://www.galudaowebstore.com.br$request_uri;
