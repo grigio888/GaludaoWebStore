@@ -2,7 +2,7 @@
     // ---------- IMPORTS ---------- //
     import './style.css';
 
-    import { page } from '$app/stores';
+    import { navigating, page } from '$app/stores';
 
     import { locale } from '$translate/store.js';
 
@@ -13,6 +13,7 @@
     import Header from "$comp/structural/Header.svelte";
     import Footer from "$comp/structural/Footer.svelte";
     import BackgroundVideo from "$comp/design/BackgroundVideo.svelte";
+    import PageTransition from '$comp/design/PageTransition.svelte';
 
     // ----------- LOGIC ----------- //
     $: locale.set(data.lang); // needed to set the language client-side
@@ -23,9 +24,11 @@
 
 <Header toShow={showNavigators} />
 
+<PageTransition refresh={data.url}>
 <div>
     <slot />
 </div>
+</PageTransition>
 
 <BackgroundVideo />
 

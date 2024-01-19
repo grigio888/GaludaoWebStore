@@ -7,28 +7,38 @@
 
 <script>
     // ---------- IMPORTS ---------- //
-    import { IconHome, IconSearch, IconLogin } from '@tabler/icons-svelte';
+    import { PUBLIC_APP_URL } from '$env/static/public';
 
+    import { headerOptions } from './headerOptions.js'
 
     // ----------- PROPS ----------- //
     export let toShow;
+
+    // ----------- LOGIC ----------- //
+    let showMenu = false;
+    let options = headerOptions()
 </script>
 
 <header class:show={toShow}>
-    <div></div>
-    <navbar>
-        <a href="#" class="td-none">
-            <IconHome size={18} />
-            <span>Pagina Inicial</span>
+    <a href="/">
+        <img
+            src="{PUBLIC_APP_URL}/static/assets/banner/default.webp"
+            alt="Galudão WebStore Logo"
+        />
+    </a>
+    <button on:click={() => showMenu = true}>
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    <navbar class:hided={!showMenu}>
+        <button on:click={() => showMenu = false}>
+            <i class="fa-solid fa-x"></i>
+        </button>
+        {#each options as opt}
+        <a href={opt.link} class="td-none" on:click={() => showMenu = false}>
+            <i class="fa-solid {opt.icon}"></i>
+            <span>{opt.title}</span>
         </a>
-        <a href="#" class="td-none">
-            <IconSearch size={18} />
-            <span>Procurar</span>
-        </a>
-        <a href="#" class="td-none">
-            <IconLogin size={18} />
-            <span>Login</span>
-        </a>
+        {/each}
     </navbar>
 </header>
 
@@ -56,19 +66,106 @@
         z-index: 5000;
 
         opacity: 0;
+        pointer-events: none;
         transition: var(--transitionMedium) ease-in-out opacity;
 
         &.show {
             opacity: 1;
+            pointer-events: all;
+        }
+
+        > a {
+            height: 100%;
+
+            img {
+                height: 80%;
+            }
+        }
+
+        button {
+            display: none;
         }
 
         navbar {
-
             gap: 1em;
 
             a {
-                gap: .25em;
+                gap: .5em;
             }
+        }
+    }
+
+    @media (max-width: 768px) {
+        header {
+            height: 4.5em;
+
+            button {
+                display: flex;
+                align-items: center;
+
+                padding: .25em;
+
+                border: none;
+                background-color: transparent;
+                color: var(--themeColor);
+
+                i {
+                    font-size: 2em;
+                }
+            }
+
+
+            navbar {
+                position: absolute;
+                top: 0;
+                right: 0;
+
+                flex-direction: column;
+                align-items: end;
+                justify-content: start;
+
+                width: 100%;
+                height: 100dvh;
+                
+                padding: .65em;
+
+                background-color: var(--backgroundColor);
+
+                font-size: 1.75em;
+
+                overflow: hidden;
+                transition: var(--transitionMedium);
+                transition-property: padding-inline, width;
+
+                &.hided {
+                    padding-inline: 0;
+                    width: 0;
+                }
+            }
+            // &.show {
+            //     opacity: 1;
+            //     pointer-events: all;
+            // }
+
+            // > a {
+            //     height: 100%;
+
+            //     img {
+            //         height: 80%;
+            //     }
+            // }
+
+            // button {
+            //     display: none;
+            // }
+
+            // navbar {
+            //     gap: 1em;
+
+            //     a {
+            //         gap: .25em;
+            //     }
+            // }
         }
     }
 </style>

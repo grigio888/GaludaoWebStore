@@ -10,14 +10,21 @@
     --defaultFont: 'Poppins', sans-serif;
     font-family: var(--defaultFont) !important;
 
-    /* Default Sizes */
+    /* Default Configs */
     --headerHeight: 3.5em;
     --footerHeight: 2.5em;
+
+    --borderWidth: 2px;
+    --borderRadius : 0.25em;
 
     /* Colors */
     --backgroundColor: #171a21;
 
     --themeColor: #f8912a;
+    --textColor: #f8912a;
+
+    --shadowColor: #ffbc2980;
+    --shadowColorActive: #ffbc29bf;
 }
 
 ::-webkit-scrollbar {

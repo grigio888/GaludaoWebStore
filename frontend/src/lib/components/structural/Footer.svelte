@@ -38,10 +38,6 @@
     }
 
     footer {
-        // position: fixed;
-        // bottom: 0;
-        // left: 0;
-
         justify-content: center;
 
         height: var(--footerHeight);
@@ -56,10 +52,12 @@
         z-index: 4000;
 
         opacity: 0;
+        pointer-events: none;
         transition: var(--transitionMedium) ease-in-out opacity;
 
         &.show {
             opacity: 1;
+            pointer-events: all;
         }
 
         navbar {
