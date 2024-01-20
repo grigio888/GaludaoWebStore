@@ -1,3 +1,5 @@
+![image](https://github.com/grigio888/GaludaoWebStore/assets/57846373/df208ce1-5aa5-474f-a5ae-86e2531cd75f)
+
 # Requirements (Development)
 In order to access the project, you must register the following in your localhosts:
 
