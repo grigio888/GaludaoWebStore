@@ -97,7 +97,6 @@
 
     @media (max-width: 768px) {
         header {
-            height: 4.5em;
 
             button {
                 display: flex;

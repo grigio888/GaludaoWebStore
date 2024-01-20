@@ -54,10 +54,6 @@
         justify-content: center;
 
         width: 70em;
-        height: 89.5vh;
-        height: 89.5dvh;
-
-        margin-inline: auto;
 
         img {
             width: 100%;

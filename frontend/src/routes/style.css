@@ -27,6 +27,12 @@
     --shadowColorActive: #ffbc29bf;
 }
 
+@media (max-width: 768px) {
+    :root {
+        --headerHeight: 4.5em;
+    }
+}
+
 ::-webkit-scrollbar {
     width: 5px;
     height: 4px;

@@ -36,7 +36,14 @@
 
 <style>
     div {
-        min-height: 89.5vh;
-        min-height: 89.5dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        --ammountToSubtract: calc(var(--headerHeight) + var(--footerHeight));
+
+        min-height: calc(100vh - var(--ammountToSubtract));
+        min-height: calc(100dvh - var(--ammountToSubtract));
     }
 </style>

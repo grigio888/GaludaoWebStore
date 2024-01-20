@@ -33,7 +33,7 @@ services:
   #   build:
   #     context: ./backend
   #   volumes:
-  #     - static:/vol/static/
+  #     - ./webserver/static:/vol/static/
   #   networks:
   #     - inet
   #   depends_on:
@@ -55,7 +55,7 @@ services:
     build:
       context: ./webserver
     volumes:
-      - static:/vol/static/
+      - ./webserver/static:/vol/static/
       - certbot:/etc/letsencrypt/
     ports:
       - 80:80
