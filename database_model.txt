@@ -1,0 +1,108 @@
+// to view: goto https://dbdiagram.io/d/Galudao-65bd10edac844320ae534187
+// about users
+
+Table users {
+  id int [increment, primary key]
+  username varchar [not null, unique]
+  email varchar [not null, unique]
+  password varchar [not null]
+  role_id int [default: 1]
+
+  created_at date [default: 'today']
+  updated_at date [default: 'today']
+}
+Ref: users.role_id < roles.id
+
+Table roles {
+  id int [increment, primary key]
+  slug varchar [not null]
+  title varchar [not null]
+  privileges int [default: 000]
+}
+
+// about items
+
+Table heroes {
+  id int [increment, primary key]
+  slug varchar [not null]
+  title varchar [not null]
+
+  img_tag varchar [not null]
+
+  created_at date [default: 'today']
+  updated_at date [default: 'today']
+}
+
+Table rarity {
+  id int [increment, primary key]
+  slug varchar [not null]
+  title varchar [not null]
+
+  color varchar [not null]
+
+  created_at date [default: 'today']
+  updated_at date [default: 'today']
+}
+
+Table items {
+  id int [increment, primary key]
+  title varchar [not null]
+  description varchar
+  image varchar [not null]
+  price int [not null]
+  is_offer tinyint [default: 0]
+  is_available tinyint [default: 1]
+
+  steam_id int [unique]
+  steam_price int
+
+  hero_id int [not null]
+  rarity_id int [not null]
+
+  created_at date [default: 'today']
+  updated_at date [default: 'today']
+}
+Ref: items.hero_id < heroes.id
+Ref: items.rarity_id < rarity.id
+
+// about purchases
+
+Table baskets {
+  id int [increment, primary key]
+  user_id int [not null]
+
+  pay_confirmation_id int
+  
+  created_at date [default: 'today']
+  updated_at date [default: 'today']
+}
+Ref: baskets.user_id < users.id
+Ref: baskets.pay_confirmation_id - pay_confirmations.id
+
+Table basket_items {
+  id int [increment, primary key]
+  basket_id int [not null]
+  item_id int [not null]
+}
+Ref: basket_items.basket_id < baskets.id
+Ref: basket_items.item_id < items.id
+
+Table pay_types {
+  id int [increment, primary key]
+  slug varchar [not null]
+  title varchar [not null]
+}
+
+Table pay_confirmations {
+  id int [increment, primary key]
+  is_paid tinyint [default: 0]
+  info longtext // will store any information coming from the bank
+
+  pay_type_id int [not null]
+
+  created_at date [default: 'today']
+  updated_at date [default: 'today']
+}
+Ref: pay_confirmations.pay_type_id < pay_types.id
+
+// {}
