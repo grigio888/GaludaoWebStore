@@ -30,7 +30,7 @@
                 R$ {item.steam_price}
             </p>
             {/if}
-            <Button secondary={true} animated={true}>
+            <Button secondary animated pill>
                 <i class="fa-solid fa-cart-shopping"></i>
                 <span>R$ {item.store_price}</span>
             </Button>

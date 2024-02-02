@@ -7,25 +7,22 @@
 -->
 
 <script>
-    // ---------- IMPORTS ---------- //
-    import { IconMail, IconInfoCircleFilled, IconHelpTriangleFilled } from '@tabler/icons-svelte';
-
     // ----------- PROPS ----------- //
     export let toShow;
 </script>
 
 <footer class:show={toShow}>
     <navbar>
-        <a href="#" class="td-none">
-            <IconMail size={15} />
+        <a href="/" class="td-none">
+            <i class="fa-solid fa-envelope" />
             <span>Contatos</span>
         </a>
-        <a href="#" class="td-none">
-            <IconInfoCircleFilled size={15} />
+        <a href="/" class="td-none">
+            <i class="fa-solid fa-circle-info" />
             <span>Informação</span>
         </a>
-        <a href="#" class="td-none">
-            <IconHelpTriangleFilled size={15} />
+        <a href="/" class="td-none">
+            <i class="fa-solid fa-circle-question" />
             <span>Ajuda</span>
         </a>
     </navbar>
@@ -71,6 +68,21 @@
 
                 span {
                     font-size: .9em;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        footer {
+
+            navbar {
+
+                a {
+
+                    span {
+                        display: none;
+                    }
                 }
             }
         }

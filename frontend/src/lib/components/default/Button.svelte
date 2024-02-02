@@ -48,6 +48,7 @@
     export let standOut = false;
     export let hidden = false;
     export let notAllowed = false;
+    export let pill = false;
 
     export let width = '100%';
 
@@ -63,7 +64,7 @@
     this={element} {formaction} {title}
 
     class:primary={!secondary} class:secondary class:animated class:stand-out={standOut}
-    class:not-allowed={notAllowed || hidden} class:hidden
+    class:not-allowed={notAllowed || hidden} class:hidden class:pill
 
     style:width={width != '0' ? width : false}
 
@@ -123,6 +124,10 @@
         &.not-allowed {
             color: darkgray !important;
             pointer-events: none;
+        }
+
+        &.pill {
+            border-radius: 15em !important;
         }
 
         &.hidden {
