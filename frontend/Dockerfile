@@ -1,5 +1,7 @@
 FROM node:20-alpine
 
+ENV PUBLIC_APP_URL http://www.galudaowebstore.local
+
 COPY . /home/frontend
 
 WORKDIR /home/frontend

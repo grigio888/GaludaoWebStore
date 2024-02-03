@@ -141,30 +141,6 @@
                     width: 0;
                 }
             }
-            // &.show {
-            //     opacity: 1;
-            //     pointer-events: all;
-            // }
-
-            // > a {
-            //     height: 100%;
-
-            //     img {
-            //         height: 80%;
-            //     }
-            // }
-
-            // button {
-            //     display: none;
-            // }
-
-            // navbar {
-            //     gap: 1em;
-
-            //     a {
-            //         gap: .25em;
-            //     }
-            // }
         }
     }
 </style>

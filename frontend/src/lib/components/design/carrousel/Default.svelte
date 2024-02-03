@@ -1,13 +1,19 @@
 <script>
+    // ---------- IMPORTS ---------- //
+    import { createEventDispatcher } from 'svelte';
+
     // ----------- PROPS ----------- //
     export let highlight;
 
     // ------ PAGE COMPONENTS ------ //
     import HighlightCard from '$comp/design/HighlightCard.svelte';
+
+    // ----------- LOGIC ----------- //
+    const dispatch = createEventDispatcher()
 </script>
 
 <div class="carrousel">
-    <button class="arrow" class:show={highlight.previous} on:click={() => {if (highlight.previous) console.log('call API to fetch the previous page')}}>
+    <button class="arrow" class:show={highlight.previous} on:click={() => {if (highlight.previous) dispatch('previous')}}>
         <i class="fa-solid fa-caret-left" />
     </button>
     <div class="display">
@@ -15,7 +21,7 @@
             <HighlightCard item={opt} scale={1.5} tilted />
         {/each}
     </div>
-    <button class="arrow" class:show={highlight.next} on:click={() => {if (highlight.next) console.log('call API to fetch the next page')}}>
+    <button class="arrow" class:show={highlight.next} on:click={() => {if (highlight.next) dispatch('next')}}>
         <i class="fa-solid fa-caret-right" />
     </button>
 </div>

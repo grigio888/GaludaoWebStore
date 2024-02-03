@@ -85,7 +85,7 @@
 
                     font-size: 0.9em;
 
-                    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 0 0 black;
+                    text-shadow: var(--textShadow);
                 }
             }
 
@@ -99,6 +99,15 @@
                 span {
                     font-weight: 800;
                 }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .frame {
+            
+            &:hover {
+                transform: scale(1.05);
             }
         }
     }

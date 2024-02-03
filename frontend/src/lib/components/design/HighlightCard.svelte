@@ -77,8 +77,6 @@
 
             height: 100%;
 
-            background-color: rgba(0, 0, 0, .5);
-
             z-index: 2;
 
             .title {
@@ -132,8 +130,6 @@
 
                 height: 100%;
 
-                background-color: transparent;
-
                 z-index: 2;
 
                 transition: var(--transitionFast);
@@ -147,7 +143,7 @@
                     transform: translateY(-50%);
 
                     transition: var(--transitionFast);
-                    transition-property: top, transform;
+                    transition-property: top, transform, text-shadow;
 
                     hr {
                         width: 50%;
@@ -161,7 +157,8 @@
 
                     transform: translateY(-50%);
 
-                    transition: var(--transitionFast) left;
+                    transition: var(--transitionFast);
+                    transition-property: left, transform, text-shadow;
                 }
 
                 .cta-area {
@@ -191,12 +188,13 @@
                 z-index: 10;
 
                 .content {
-                    background-color: rgba(0, 0, 0, .5);
 
                     .title {
                         top: 0;
 
                         transform: none;
+
+                        text-shadow: var(--textShadow);
 
                         hr {
                             width: 100%;
@@ -205,6 +203,8 @@
 
                     .description {
                         left: 0;
+
+                        text-shadow: var(--textShadow);
                     }
                 }
             }

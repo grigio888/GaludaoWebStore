@@ -12,7 +12,7 @@
     import CarrouselWithSmallerCards from '$comp/design/carrousel/WithSmallerCards.svelte';
 </script>
 
-<section>
+<section id="search">
     <div class="title">
         <h1>
             Procurar
@@ -79,6 +79,13 @@
 
             text-align: left;
 
+            h1 {
+                animation: pulseTextShadow var(--transitionUltraSlow) infinite;
+            }
+
+            hr {
+                animation: pulseBoxShadow var(--transitionUltraSlow) infinite;
+            }
         }
 
         .search-display {

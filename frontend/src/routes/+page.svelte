@@ -32,7 +32,7 @@
             <span>Catálogo</span>
         </Button>
         <Button
-            element={"a"} urlTo={"#"} title={"Procurar"}
+            element={"a"} urlTo={"/catalog#search"} title={"Procurar"}
             >
             <i class="fa-solid fa-magnifying-glass"></i>
             <span>Procurar</span>
@@ -61,6 +61,8 @@
 
         h1, h2 {
             text-align: center;
+
+            text-shadow: var(--textShadow);
         }
 
         h2 {

@@ -6,7 +6,7 @@ export function headerOptions() {
             title: "Catálogo"
         },
         {
-            link: "/",
+            link: "/catalog#search",
             icon: "fa-magnifying-glass",
             title: "Procurar"
         },

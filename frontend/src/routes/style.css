@@ -5,6 +5,7 @@
     --transitionFast: 0.25s;
     --transitionMedium: 0.5s;
     --transitionSlow: 1s;
+    --transitionUltraSlow: 4s;
     
     /* Texts */
     --defaultFont: 'Poppins', sans-serif;
@@ -25,6 +26,8 @@
 
     --shadowColor: #ffbc2980;
     --shadowColorActive: #ffbc29bf;
+
+    --textShadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 0 0 black;
 }
 
 @media (max-width: 768px) {
@@ -77,4 +80,22 @@ a.td-none {
 
 button {
     font-family: var(--defaultFont) !important;
+}
+
+@keyframes pulseBoxShadow {
+    0%, 100% {
+        box-shadow: 0 0 0 transparent;
+    }
+    40%, 60% {
+        box-shadow: 0 0 10px var(--shadowColor);
+    }
+}
+
+@keyframes pulseTextShadow {
+    0%, 100% {
+        text-shadow: 0 0 0 transparent;
+    }
+    40%, 60% {
+        text-shadow: 0 0 10px var(--shadowColor);
+    }
 }

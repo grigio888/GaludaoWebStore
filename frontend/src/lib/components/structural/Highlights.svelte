@@ -7,7 +7,7 @@
     import CarrouselWithHighlight from '$comp/design/carrousel/WithHighlight.svelte';
 </script>
 
-<section>
+<section id="highlights">
     <div class="title">
         <h1>
             Destaques
@@ -43,11 +43,17 @@
 
             text-align: left;
 
+            h1 {
+                animation: pulseTextShadow var(--transitionUltraSlow) infinite;
+            }
+            
             hr {
                 height: var(--borderWidth);
                 width: 100%;
-
+                
                 border-color: var(--themeColor);
+
+                animation: pulseBoxShadow var(--transitionUltraSlow) infinite;
             }
         }
 
