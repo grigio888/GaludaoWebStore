@@ -38,7 +38,7 @@
             <span>Procurar</span>
         </Button>
         <Button
-            element={"a"} urlTo={"#"} title={"Login"}
+            element={"a"} urlTo={"/login"} title={"Login"}
             >
             <i class="fa-solid fa-right-to-bracket"></i>
             <span>Login</span>

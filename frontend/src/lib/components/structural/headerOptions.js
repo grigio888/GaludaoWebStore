@@ -19,7 +19,7 @@ export function headerOptions() {
             onlyMobile: false
         },
         {
-            link: "/",
+            link: "/login",
             icon: "fa-right-to-bracket",
             title: "Login",
             onlyMobile: false

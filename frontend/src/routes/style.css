@@ -79,7 +79,7 @@ a.td-none {
     text-decoration: none;
 }
 
-button {
+button, input, textarea {
     font-family: var(--defaultFont) !important;
 }
 

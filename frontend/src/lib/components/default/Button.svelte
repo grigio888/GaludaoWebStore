@@ -42,21 +42,23 @@
 <script>
     // ----------- PROPS ----------- //
     export let element = 'button';
+    export let formaction = undefined;
+    export let title = undefined;
 
     export let secondary = false;
     export let animated = false;
     export let standOut = false;
-    export let hidden = false;
     export let notAllowed = false;
+    export let hidden = false;
     export let pill = false;
+
+    export let type = false;
 
     export let width = '100%';
 
     export let urlTo = '';
 
-    export let title = undefined;
 
-    export let formaction = undefined;
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -65,6 +67,8 @@
 
     class:primary={!secondary} class:secondary class:animated class:stand-out={standOut}
     class:not-allowed={notAllowed || hidden} class:hidden class:pill
+
+    type={type}
 
     style:width={width != '0' ? width : false}
 
