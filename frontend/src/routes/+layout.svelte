@@ -2,7 +2,7 @@
     // ---------- IMPORTS ---------- //
     import './style.css';
 
-    import { navigating, page } from '$app/stores';
+    import { page } from '$app/stores';
 
     import { locale } from '$translate/store.js';
 
@@ -14,6 +14,8 @@
     import Footer from "$comp/structural/Footer.svelte";
     import BackgroundVideo from "$comp/design/BackgroundVideo.svelte";
     import PageTransition from '$comp/design/PageTransition.svelte';
+
+    import Modal from '$comp/default/modal/Default.svelte';
 
     // ----------- LOGIC ----------- //
     $: locale.set(data.lang); // needed to set the language client-side
@@ -33,6 +35,8 @@
 <BackgroundVideo />
 
 <Footer toShow={showNavigators} />
+
+<Modal />
 
 <style>
     div {

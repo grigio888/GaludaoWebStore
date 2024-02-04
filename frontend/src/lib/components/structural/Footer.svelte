@@ -7,29 +7,75 @@
 -->
 
 <script>
+    // ---------- IMPORTS ---------- //
+    import { showModal } from "$comp/default/modal/store.js";
+
     // ----------- PROPS ----------- //
     export let toShow;
+
+    // ----------- LOGIC ----------- //
+    let contactData = {
+        title: 'Contatos',
+        content: `
+        <p>
+            Galudão (Toasty)
+        </p>
+        <a href="https://www.instagram.com/galudaostore/" target="_blank">
+            <i class="fa-brands fa-instagram"></i> 
+            <b>@GaludaoStore</b>
+        </a>
+        `
+    }
+    let infoData = {
+        title: 'Informação',
+        content: `
+        <p>
+            Website em desenvolvimento por:
+        </p>
+        <br>
+        <a href="https://www.linkedin.com/in/vinicius-grigio/" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+            <b>Vinicius Grigio</b>
+        </a>
+        <br>
+        <a href="https://www.linkedin.com/in/emows-lemos/" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+            <b>Emows Lemos</b>
+        </a>
+        `
+    }
+    let helpData = {
+        title: 'Ajuda',
+        content: `
+        <p>
+            Precisa de ajuda?
+        </p>
+        <p>
+            Entre em contato com os administradores do sistema.
+        </p>
+        `
+    }
 </script>
 
 <footer class:show={toShow}>
     <navbar>
-        <a href="/" class="td-none">
+        <button class="td-none" on:click={() => showModal(contactData)}>
             <i class="fa-solid fa-envelope" />
             <span>Contatos</span>
-        </a>
-        <a href="/" class="td-none">
+        </button>
+        <button class="td-none" on:click={() => showModal(infoData)}>
             <i class="fa-solid fa-circle-info" />
             <span>Informação</span>
-        </a>
-        <a href="/" class="td-none">
+        </button>
+        <button class="td-none" on:click={() => showModal(helpData)}>
             <i class="fa-solid fa-circle-question" />
             <span>Ajuda</span>
-        </a>
+        </button>
     </navbar>
 </footer>
 
 <style lang="scss">
-    footer, navbar, a {
+    footer, navbar, button {
         display: flex;
         align-items: center;
     }
@@ -63,12 +109,16 @@
 
             width: 100%;
 
-            a {
+            button {
                 gap: .25em;
 
-                span {
-                    font-size: .9em;
-                }
+                border: none;
+                background-color: transparent;
+
+                font-size: .9em;
+                color: var(--textColor);
+
+                cursor: pointer;
             }
         }
     }
@@ -78,7 +128,7 @@
 
             navbar {
 
-                a {
+                button {
 
                     span {
                         display: none;
