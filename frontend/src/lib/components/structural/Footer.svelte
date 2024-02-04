@@ -130,6 +130,10 @@
 
                 button {
 
+                    i {
+                        font-size: 1.25em;
+                    }
+
                     span {
                         display: none;
                     }

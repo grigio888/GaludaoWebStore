@@ -27,11 +27,11 @@
         />
     </a>
     <button on:click={() => showMenu = true}>
-        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-angles-left"></i>
     </button>
     <navbar class:hided={!showMenu}>
         <button on:click={() => showMenu = false}>
-            <i class="fa-solid fa-x"></i>
+            <i class="fa-solid fa-angles-right"></i>
         </button>
         {#each options as opt}
         <a href={opt.link} class="td-none" on:click={() => showMenu = false} class:onlyMobile={opt.onlyMobile}>
@@ -113,7 +113,7 @@
                 color: var(--themeColor);
 
                 i {
-                    font-size: 2em;
+                    font-size: 1.75em;
                 }
             }
 
