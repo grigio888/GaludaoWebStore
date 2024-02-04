@@ -34,7 +34,7 @@
             <i class="fa-solid fa-x"></i>
         </button>
         {#each options as opt}
-        <a href={opt.link} class="td-none" on:click={() => showMenu = false}>
+        <a href={opt.link} class="td-none" on:click={() => showMenu = false} class:onlyMobile={opt.onlyMobile}>
             <i class="fa-solid {opt.icon}"></i>
             <span>{opt.title}</span>
         </a>
@@ -91,6 +91,10 @@
 
             a {
                 gap: .5em;
+
+                &.onlyMobile {
+                    display: none;
+                }
             }
         }
     }
@@ -140,6 +144,14 @@
                     padding-inline: 0;
                     width: 0;
                 }
+
+                a {
+
+                    &.onlyMobile {
+                        display: flex;
+                    }
+                }
+
             }
         }
     }

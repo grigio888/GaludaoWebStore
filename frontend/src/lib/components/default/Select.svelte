@@ -104,7 +104,7 @@
         border: var(--borderWidth) solid var(--themeColor);
         border-radius: var(--borderRadius);
         
-        background-color: rgba(0, 0, 0, .5);
+        background-color: var(--backgroundColorFaded);
 
         font-size: .8em;
 
@@ -148,7 +148,7 @@
 
                 border: none;
 
-                background-color: rgba(0, 0, 0, .5);
+                background-color: var(--backgroundColorFaded);
 
                 color: var(--textColor);
                 text-align: left;

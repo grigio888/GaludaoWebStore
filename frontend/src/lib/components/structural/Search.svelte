@@ -96,7 +96,7 @@
 
             padding-block: .5em;
 
-            background-color: rgba(0, 0, 0, .5);
+            background-color: var(--backgroundColorFaded);
 
             border: var(--borderWidth) solid var(--themeColor);
             border-radius: var(--borderRadius);

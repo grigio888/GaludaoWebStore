@@ -3,11 +3,20 @@
     export let data;
 
     // ------ PAGE COMPONENTS ------ //
+    import Metatags from '$comp/Metatags.svelte';
+    import Outdoor from '$comp/structural/Outdoor.svelte';
     import Highlights from '$comp/structural/Highlights.svelte';
     import Search from '$comp/structural/Search.svelte';
 </script>
 
+<Metatags
+    title="Catálogo"
+    keywords="catálogo, itens, personagem, herói, raridade"
+/>
+
 <div>
+    <Outdoor data={data.outdoor} />
+
     <Highlights pagination={data.highlight} />
 
     <Search pagination={data.search} rarity={data.rarity} />
@@ -17,7 +26,7 @@
     div {
         display: flex;
         flex-direction: column;
-        gap: 10em;
+        gap: 5em;
 
         width: 100%;
 

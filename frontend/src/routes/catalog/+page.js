@@ -74,8 +74,8 @@ export async function load ({ locals }) {
     }
     let search = {
         "count": 10,
-        "next": true,
-        "previous": true,
+        "next": null,
+        "previous": null,
         "results": [
             {
                 "id": 4,
@@ -248,10 +248,24 @@ export async function load ({ locals }) {
             }
         ]
     }
+    let outdoor = [
+        {
+            title: 'BEM VINDO À LOJA GALUDÃO WEBSTORE',
+            description: `<p>O melhor lugar para você comprar, trocar e vender itens e sets de Dota 2 sempre!</p><p>Sempre as melhores promoções e combinações de itens para você, seja em Collector's, Arcanos, Imortais ou Conjuntos.</p><p>Temos, com certeza, o melhor preço no item que você quer.</p>`,
+        },
+        {
+            title: 'TAMBÉM COMPRAMOS SEUS ITENS!',
+            description: `<p>Tá precisando de uma grana extra ou quer trocar algum item por outro?</p><p>O Galudão pode te ajudar!</p><p>Trabalhamos também com Trocas e Negociações com outros itens de Dota2 e, também, de CS:GO.</p>`,
+        },
+        {
+            image: 'https://www.galudaowebstore.com.br/static/assets/imgs/hero-carrosel/galudao_store.jpg'
+        }
+    ]
 
     return {
         highlight,
         search,
-        rarity
+        rarity,
+        outdoor
     }
 }

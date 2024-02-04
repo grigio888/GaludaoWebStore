@@ -86,25 +86,11 @@
     @media (max-width: 768px) {
         section {
             width: 95%;
-            img {
-                width: 100%;
-            }
-
-            h2 {
-                margin-bottom: 1.5em;
-            }
 
             .button-array {
                 flex-direction: column;
-                gap: 1em;
 
-                width: 65%;
-
-                >:global(*) {
-                    width: 33%;
-
-                    font-size: 1em;
-                }
+                width: 90%;
             }
         }
     }
