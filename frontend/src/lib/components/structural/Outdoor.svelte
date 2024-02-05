@@ -112,19 +112,28 @@
 
         .selector {
             position: absolute;
-            bottom: 0;
+            bottom: .5em;
             left: 50%;
             transform: translateX(-50%);
 
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 1em;
 
-            padding-block: 1em;
+            padding: .5em;
+
+            border-radius: 5em;
+
+            background-color: var(--backgroundColorFaded);
 
             z-index: 3;
 
             .selector-item {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
                 background-color: transparent;
                 border: none;
                 border-radius: 50%;

@@ -1,3 +1,5 @@
+import { PUBLIC_APP_URL } from '$env/static/public';
+
 export async function load ({ locals }) {
     let highlight = {
         // this variable must a API fetch to highlights endpoint.
@@ -258,14 +260,25 @@ export async function load ({ locals }) {
             description: `<p>Tá precisando de uma grana extra ou quer trocar algum item por outro?</p><p>O Galudão pode te ajudar!</p><p>Trabalhamos também com Trocas e Negociações com outros itens de Dota2 e, também, de CS:GO.</p>`,
         },
         {
-            image: 'https://www.galudaowebstore.com.br/static/assets/imgs/hero-carrosel/galudao_store.jpg'
+            image: `${PUBLIC_APP_URL}/static/assets/outdoor/galudao_wallpaper.webp`
         }
+    ]
+    let heroes = [
+        'Abaddon', 'Alchemist', 'Ancient Apparition', 'Anti-Mage', 'Arc Warden', 'Axe', 'Bane', 'Batrider', 'Beastmaster', 'Bloodseeker', 'Bounty Hunter', 'Brewmaster', 'Bristleback', 'Broodmother', 'Centaur', 'Chaos Knight', 'Chen', 'Clinkz', 'Rattletrap', 'Crystal Maiden', 'Dark Seer',     'Dark Willow',
+        'Dawnbreaker', 'Dazzle', 'Death Prophet', 'Disruptor', 'Doom bringer', 'Dragon Knight', 'Drow Ranger', 'Earth Spirit', 'Earthshaker', 'Elder Titan', 'Ember Spirit', 'Enchantress', 'Enigma', 'Faceless Void', 'Grimstroke', 'Gyrocopter', 'Hoodwink', 'Huskar',
+        'Invoker', 'wisp', 'Jakiro', 'Juggernaut', 'Keeper_of_the_Light', 'Kunkka', 'Legion Commander', 'Leshrac', 'Lich', 'Life stealer', 'Lina', 'Lion', 'Lone Druid', 'Luna', 'Lycan', 'magnataur', 'Mars',
+        'Medusa', 'Meepo', 'Mirana', 'Monkey King', 'Morphling', 'Naga Siren', 'furion', 'necrolyte', 'Night Stalker', 'Nyx Assassin', 'Ogre Magi', 'Omniknight', 'Oracle', 'obsidian_destroyer',
+        'Pangolier', 'Phantom_Assassin', 'Phantom Lancer', 'Phoenix', 'Puck', 'Pudge', 'Pugna', 'QueenofPain', 'Razor', 'Riki', 'Rubick', 'Sand King', 'Shadow Demon', 'nevermore', 'Shadow Shaman', 'Silencer',
+        'Skywrath Mage', 'Slardar', 'Slark', 'Snapfire', 'Sniper', 'Spectre', 'Spirit Breaker', 'Storm Spirit', 'Sven', 'Techies', 'Templar Assassin', 'Terrorblade', 'Tidehunter', 'shredder',
+        'Tinker', 'Tiny', 'Treant', 'Troll Warlord', 'Tusk', 'abyssal_underlord', 'Undying', 'Ursa', 'VengefulSpirit', 'Venomancer', 'Viper', 'Visage', 'Void Spirit', 'Warlock',
+        'Weaver', 'windrunner', 'Winter Wyvern', 'Witch Doctor', 'skeleton_king', 'zuus', 'Outros', 'Cenário'
     ]
 
     return {
         highlight,
         search,
         rarity,
-        outdoor
+        outdoor,
+        heroes
     }
 }

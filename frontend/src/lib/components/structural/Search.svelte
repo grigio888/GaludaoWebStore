@@ -1,12 +1,14 @@
 <script>
+    // ---------- IMPORTS ---------- //
+    import { showHeroModal } from '../default/modal/specifics/heroModal/store';
+
     // ----------- PROPS ----------- //
     export let pagination;
     export let rarity;
-
-    let selectRarity;
+    export let heroes;
 
     // ------ PAGE COMPONENTS ------ //
-
+    import HeroModal from '$comp/default/modal/specifics/heroModal/Default.svelte';
     import Button from '$comp/default/Button.svelte';
     import Select from '$comp/default/Select.svelte';
     import CarrouselWithSmallerCards from '$comp/design/carrousel/WithSmallerCards.svelte';
@@ -24,21 +26,16 @@
             <div class="opt">
                 <input type="text" value="all" hidden />
                 Herói:
-                <Button secondary animated pill standOut>Selecionar</Button>
+                <Button secondary animated pill standOut on:click={showHeroModal}>Selecionar</Button>
             </div>
             <div class="opt">
-                <select bind:this={selectRarity} name="rarity" id="rarity">
-                    {#each rarity.results as r}
-                        <option value={r.id} selected={r.name == "Todos"}>{r.name}</option>
-                    {/each}
-                </select>
                 Raridade:
                 <Select options={
                     rarity.results.map((r) => {
                         return {value: r.id, text: r.name, selected: r.name == "Todos"}
                     })
                 } on:change={
-                    (e) => selectRarity.value = e.detail.value
+                    (e) => console.log('Call api to async refresh the search results: ' + e.detail.text.toLowerCase())
                 } />
             </div>
         </div>
@@ -46,12 +43,17 @@
         <div class="search-results">
             <CarrouselWithSmallerCards
                 options={pagination}
-                on:previous={() => console.log('Search prev page')}
-                on:next={() => console.log('Search next page')}
+                on:previous={() => console.log('Call api to async refresh the search results to previous page')}
+                on:next={() => console.log('Call api to async refresh the search results to next page')}
             />
         </div>
     </div>
 </section>
+
+<HeroModal
+    {heroes}
+    on:closed={(e) => console.log('Call api to async refresh the search results: ' + e.detail)}
+/>
 
 <style lang="scss">
     section, .title, .search-display, .header, .header .opt {

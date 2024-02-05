@@ -19,7 +19,7 @@
 
     <Highlights pagination={data.highlight} />
 
-    <Search pagination={data.search} rarity={data.rarity} />
+    <Search pagination={data.search} rarity={data.rarity} heroes={data.heroes} />
 </div>
 
 <style lang="scss">
