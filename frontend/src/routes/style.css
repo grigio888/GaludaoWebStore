@@ -79,6 +79,13 @@ a.td-none {
     text-decoration: none;
 }
 
+hr.vr {
+    height: var(--borderWidth);
+    width: 100%;
+    
+    border-color: var(--themeColor);
+}
+
 button, input, textarea {
     font-family: var(--defaultFont) !important;
 }

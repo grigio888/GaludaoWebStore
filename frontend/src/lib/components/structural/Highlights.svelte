@@ -12,7 +12,7 @@
         <h1>
             Destaques
         </h1>
-        <hr />
+        <hr class="vr"/>
     </div>
     <div class="display">
         {#each pagination.results as item}
@@ -48,11 +48,6 @@
             }
             
             hr {
-                height: var(--borderWidth);
-                width: 100%;
-                
-                border-color: var(--themeColor);
-
                 animation: pulseBoxShadow var(--transitionUltraSlow) infinite;
             }
         }

@@ -17,7 +17,7 @@
         <h1>
             Procurar
         </h1>
-        <hr />
+        <hr class="vr"/>
     </div>
     <div class="search-display">
         <div class="header">
@@ -64,13 +64,6 @@
         gap: 2em;
 
         width: 100%;
-
-        hr {
-            height: var(--borderWidth);
-            width: 100%;
-
-            border-color: var(--themeColor);
-        }
 
         .title {
             gap: 1em;

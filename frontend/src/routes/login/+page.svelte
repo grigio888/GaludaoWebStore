@@ -25,10 +25,19 @@
     <div class="container">
         <h1>Login</h1>
         <form>
-            <Input type="text" placeholder="Username" />
-            <Input type="password" placeholder="Password" />
+            <Input type="text" placeholder="Usuário" />
+            <Input type="password" placeholder="Senha" />
             <Button type="submit" title="Login" on:click={notImplemented}>Login</Button>
         </form>
+        <hr class="vr">
+        <Button title="Login with Steam" on:click={notImplemented}>
+            <i class="fa-brands fa-steam"></i>
+            <span>Login com Steam</span>
+        </Button>
+        <Button title="Login with Google" on:click={notImplemented}>
+            <i class="fa-brands fa-google"></i>
+            <span>Login com Google</span>
+        </Button>
     </div>
 </section>
 
@@ -50,14 +59,12 @@
             max-width: 30em;
 
             margin-inline: auto;
-            padding: 1em;
+            padding: 3em 1em 1em;
     
             border: var(--borderWidth) solid var(--themeColor);
-            border-top: transparent;
-    
             border-radius: var(--borderRadius);
-            border-top-left-radius: 0px;
-            border-top-right-radius: 0px;
+
+            background-color: var(--backgroundColorFaded);
 
             form {
                 width: 100%;
