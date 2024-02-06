@@ -1,6 +1,6 @@
 <script>
     // ---------- IMPORTS ---------- //
-    import { cartModalInfo, cartStore, toggleItemInCart } from "./store.js";
+    import { cartModalInfo, cartStore, toggleProduct } from "./store.js";
 
     // --------- COMPONENTS -------- //
     import Button from "$comp/default/Button.svelte";
@@ -11,8 +11,8 @@
     let closeDialog = () => $cartModalInfo.show = false;
 
 
-    $: totalItems = $cartStore.items.length;
-    $: subtotal = $cartStore.items.reduce((acc, item) => acc + item.store_price, 0);
+    $: totalItems = $cartStore.length;
+    $: subtotal = $cartStore.reduce((acc, item) => acc + item.store_price, 0);
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-noninteractive-element-interactions -->
@@ -29,7 +29,7 @@
 
     <div class="content">
         <div class="items">
-            {#each $cartStore.items as item}
+            {#each $cartStore as item}
                 <div class="item">
                     <div class="frame">
                         <img src={item.image} alt={item.title} />
@@ -44,15 +44,15 @@
                             animated
                             pill
                             on:click={() => {
-                                toggleItemInCart(item)
-                                if ($cartStore.items.length === 0) closeDialog();
+                                toggleProduct(item)
+                                if ($cartStore.length === 0) closeDialog();
                             }}
                             >
                             <i class="fa-solid fa-times" />
                         </Button>
                     </div>
                 </div>
-                {#if item !== $cartStore.items[$cartStore.items.length - 1]}
+                {#if item !== $cartStore[$cartStore.length - 1]}
                     <hr class="vr">
                 {/if}
             {/each}
@@ -204,7 +204,7 @@
                 align-items: center;
                 gap: 1em;
 
-                padding: .5em;
+                padding: .25em .5em;
 
                 .frame {
                     height: 5em;
@@ -273,7 +273,7 @@
             width: min(30em, 95vw);
             height: 95vh;
 
-            padding-inline: .25em;
+            padding-inline: 0;
 
             .content {
                 flex-direction: column;

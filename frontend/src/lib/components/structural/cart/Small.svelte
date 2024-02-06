@@ -6,7 +6,7 @@
 
     // ----------- LOGIC ----------- //
     let dispatch = createEventDispatcher();
-    $: numberOfItems = $cartStore.items.length;
+    $: numberOfItems = $cartStore.length;
 </script>
 
 <button

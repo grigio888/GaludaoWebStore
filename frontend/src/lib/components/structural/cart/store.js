@@ -3,28 +3,46 @@
 */
 
 import { writable } from 'svelte/store';
-
-let defaultInfo = {
-    items: []
-}
+import { browser } from '$app/environment';
 
 export let cartModalInfo = writable({
     show: false
 });
 
-export let cartStore = writable(defaultInfo);
+export let cartStore = writable(
+    browser && localStorage.getItem('cart')
+    ? JSON.parse(localStorage.getItem('cart'))
+    : []
+);
 
-export function fetchItemInfo() {
-    // this function will fetch the item info from the server
-}
+cartStore.subscribe(value => {
+    if (browser) localStorage.setItem('cart', JSON.stringify(value));
+});
 
-export function toggleItemInCart(item) {
-    cartStore.update((store) => {
-        if (store.items.includes(item)) {
-            store.items = store.items.filter((i) => i !== item);
-        } else {
-            store.items.push(item);
-        }
+export function addProduct(product) {
+    cartStore.update(store => {
+        store.push(product);
         return store;
     });
+}
+
+export function removeProduct(product) {
+    cartStore.update(store => {
+        return store.filter(p => p.id !== product.id);
+    });
+}
+
+export function toggleProduct(product) {
+    cartStore.update(store => {
+        if (store.find(p => p.id === product.id)) {
+            return store.filter(p => p.id !== product.id);
+        } else {
+            store.push(product);
+            return store;
+        }
+    });
+}
+
+export function clearCart() {
+    cartStore.set([]);
 }

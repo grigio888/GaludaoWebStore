@@ -1,12 +1,9 @@
 <script>
     // ---------- IMPORTS ---------- //
-    import { createEventDispatcher } from "svelte";
-
     import { cartStore, cartModalInfo } from './store.js';
 
     // ----------- LOGIC ----------- //
-    let dispatch = createEventDispatcher();
-    $: numberOfItems = $cartStore.items.length;
+    $: numberOfItems = $cartStore.length;
 </script>
 
 <button

@@ -1,7 +1,7 @@
 <script>
     // ---------- IMPORTS ---------- //
     import { addZeroes } from "$tools/utils";
-    import { cartStore, toggleItemInCart } from "$comp/structural/cart/store";
+    import { cartStore, toggleProduct } from "$comp/structural/cart/store";
 
     // ----------- PROPS ----------- //
     export let item;
@@ -10,7 +10,7 @@
     import Button from "$comp/default/Button.svelte";
 
     // ----------- LOGIC ----------- //
-    $: inCart = $cartStore.items.some((i) => i.id == item.id);
+    $: inCart = $cartStore.some((i) => i.id == item.id);
 </script>
 
 <div class="frame">
@@ -27,7 +27,7 @@
         <div class="cta-area">
             <Button
                 secondary={!inCart} animated pill
-                on:click={() => toggleItemInCart(item)}
+                on:click={() => toggleProduct(item)}
                 >
                 {#if inCart}
                     <i class="fa-solid fa-check"></i>

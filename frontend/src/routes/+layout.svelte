@@ -26,7 +26,8 @@
     // the header and footer will be hided on the first page.
     $: showNavigators = $page.url.pathname != '/'
 
-    $: enableCart = $cartStore.items.length > 0;
+    // dealing with the cart
+    $: enableCart = $cartStore.length > 0;
 </script>
 
 <Header toShow={showNavigators} />
