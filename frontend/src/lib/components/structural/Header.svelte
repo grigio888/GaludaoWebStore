@@ -10,6 +10,7 @@
     import { PUBLIC_APP_URL } from '$env/static/public';
 
     import { headerOptions } from './headerOptions.js'
+    import CartSmall from '$comp/structural/cart/Small.svelte'
 
     // ----------- PROPS ----------- //
     export let toShow;
@@ -33,6 +34,7 @@
         <button on:click={() => showMenu = false}>
             <i class="fa-solid fa-angles-right"></i>
         </button>
+        <CartSmall on:click={() => showMenu = false} />
         {#each options as opt}
         <a href={opt.link} class="td-none" on:click={() => showMenu = false} class:onlyMobile={opt.onlyMobile}>
             <i class="fa-solid {opt.icon}"></i>

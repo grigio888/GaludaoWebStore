@@ -15,6 +15,7 @@ const config = {
 		adapter: adapter(),
         alias: {
             $comp: './src/lib/components',
+            $tools: './src/lib/tools',
             $translate: './src/translate'
         },
 	}

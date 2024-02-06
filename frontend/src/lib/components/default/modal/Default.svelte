@@ -138,26 +138,6 @@
         }
     }
 
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
-
-    @keyframes fadeInFilter {
-        from {
-            backdrop-filter: blur(0px);
-        }
-
-        to {
-            backdrop-filter: blur(2px);
-        }
-    }
-
     @media (max-width: 768px) {
         dialog {
             width: min(30em, 95vw);

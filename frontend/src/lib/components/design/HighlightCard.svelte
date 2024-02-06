@@ -1,4 +1,8 @@
 <script>
+    // ---------- IMPORTS ---------- //
+    import { addZeroes } from "$tools/utils";
+    import { cartStore, toggleItemInCart } from "$comp/structural/cart/store";
+
     // ----------- PROPS ----------- //
     export let item;
 
@@ -7,6 +11,9 @@
 
     // ------ PAGE COMPONENTS ------ //
     import Button from "$comp/default/Button.svelte";
+
+    // ----------- LOGIC ----------- //
+    $: inCart = $cartStore.items.some((i) => i.id == item.id);
 </script>
 
 <div class="frame" class:tilted style="--scale: {scale}">
@@ -27,12 +34,19 @@
         <div class="cta-area">
             {#if item.steam_price}
             <p>
-                R$ {item.steam_price}
+                R$ {addZeroes(item.steam_price)}
             </p>
             {/if}
-            <Button secondary animated pill>
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span>R$ {item.store_price}</span>
+            <Button
+                secondary={!inCart} animated pill
+                on:click={() => toggleItemInCart(item)}
+                >
+                {#if inCart}
+                    <i class="fa-solid fa-check"></i>
+                {:else}
+                    <i class="fa-solid fa-cart-shopping"></i>
+                {/if}
+                <span>R$ {addZeroes(item.store_price)}</span>
             </Button>
         </div>
     </div>

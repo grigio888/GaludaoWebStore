@@ -5,6 +5,7 @@
     import { page } from '$app/stores';
 
     import { locale } from '$translate/store.js';
+    import { cartStore } from '$comp/structural/cart/store';
 
     // ----------- PROPS ----------- //
     export let data;
@@ -16,12 +17,16 @@
     import PageTransition from '$comp/design/PageTransition.svelte';
 
     import Modal from '$comp/default/modal/Default.svelte';
+    import CartModal from '$comp/structural/cart/Default.svelte';
+    import CartButton from '$comp/structural/cart/Button.svelte';
 
     // ----------- LOGIC ----------- //
     $: locale.set(data.lang); // needed to set the language client-side
 
     // the header and footer will be hided on the first page.
     $: showNavigators = $page.url.pathname != '/'
+
+    $: enableCart = $cartStore.items.length > 0;
 </script>
 
 <Header toShow={showNavigators} />
@@ -37,6 +42,13 @@
 <Footer toShow={showNavigators} />
 
 <Modal />
+
+{#if enableCart}
+<CartModal />
+{#if showNavigators}
+<CartButton />
+{/if}
+{/if}
 
 <style>
     div {

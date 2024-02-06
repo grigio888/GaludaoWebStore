@@ -84,6 +84,8 @@
         justify-content: center;
         gap: 0.5em;
 
+        height: 2.5em;
+
         padding: 0.5em 1em 0.4em;
 
         border-radius: var(--borderRadius);

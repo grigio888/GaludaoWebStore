@@ -105,10 +105,6 @@
                 .opt {
                     width: 15em;
                     gap: .5em;
-                    
-                    select {
-                        display: none;
-                    }
                 }
             }
 
