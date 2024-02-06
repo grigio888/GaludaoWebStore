@@ -95,6 +95,9 @@
         cursor: pointer;
         text-decoration: none;
 
+        transition: border, background-color, color, font-weight;
+        transition-duration: var(--transitionFast);
+
         &.primary {
             border: none;
 
@@ -109,9 +112,6 @@
 
             background-color: transparent;
             color: var(--textColor);
-
-            transition: background-color, color;
-            transition-duration: var(--transitionFast);
         }
 
         &.animated {
