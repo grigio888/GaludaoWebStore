@@ -1,8 +1,9 @@
 <script>
     // ---------- IMPORTS ---------- //
     import { createEventDispatcher } from "svelte";
-
+    
     import { cartStore, cartModalInfo } from './store.js';
+    import { _ } from '$translate/i18n';
 
     // ----------- LOGIC ----------- //
     let dispatch = createEventDispatcher();
@@ -17,7 +18,7 @@
     }}
     >
     <i class="fa-solid fa-cart-shopping" items="{numberOfItems}"></i>
-    <span>Carrinho</span>
+    <span>{_("Carrinho")}</span>
 </button>
 
 <style lang="scss">

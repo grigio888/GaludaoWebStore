@@ -1,6 +1,7 @@
 <script>
     // ---------- IMPORTS ---------- //
     import { showModal } from "$comp/default/modal/store.js";
+    import { _ } from '$translate/i18n';
 
     // --------- COMPONENTS -------- //
     import Metatags from "$comp/Metatags.svelte";
@@ -10,33 +11,33 @@
     // ----------- LOGIC ----------- //
     let notImplemented = () => {
         showModal({
-            title: "Aviso",
-            content: "Essa funcionalidade ainda não foi implementada."
+            title: _("Aviso"),
+            content: _("Essa funcionalidade ainda não foi implementada.")
         });
     }
 </script>
 
 <Metatags 
-    title={"Login"}
+    title={_("Login")}
     robots={"noindex, nofollow"}
 />
 
 <section>
     <div class="container">
-        <h1>Login</h1>
+        <h1>{_("Login")}</h1>
         <form>
-            <Input type="text" placeholder="Usuário" />
-            <Input type="password" placeholder="Senha" />
-            <Button type="submit" title="Login" on:click={notImplemented}>Login</Button>
+            <Input type="text" placeholder={_("Usuário")} />
+            <Input type="password" placeholder={_("Senha")} />
+            <Button type="submit" title={_("Login")} on:click={notImplemented}>{_("Login")}</Button>
         </form>
         <hr class="vr">
-        <Button title="Login with Steam" on:click={notImplemented}>
+        <Button title={_("Login com Steam")} on:click={notImplemented}>
             <i class="fa-brands fa-steam"></i>
-            <span>Login com Steam</span>
+            <span>{_("Login com Steam")}</span>
         </Button>
-        <Button title="Login with Google" on:click={notImplemented}>
+        <Button title={_("Login com Google")} on:click={notImplemented}>
             <i class="fa-brands fa-google"></i>
-            <span>Login com Google</span>
+            <span>{_("Login com Google")}</span>
         </Button>
     </div>
 </section>

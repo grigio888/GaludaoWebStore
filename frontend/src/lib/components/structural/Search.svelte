@@ -1,6 +1,7 @@
 <script>
     // ---------- IMPORTS ---------- //
     import { showHeroModal } from '../default/modal/specifics/heroModal/store';
+    import { _ } from '$translate/i18n';
 
     // ----------- PROPS ----------- //
     export let pagination;
@@ -17,7 +18,7 @@
 <section id="search">
     <div class="title">
         <h1>
-            Procurar
+            {_("Procurar")}
         </h1>
         <hr class="vr"/>
     </div>
@@ -25,11 +26,11 @@
         <div class="header">
             <div class="opt">
                 <input type="text" value="all" hidden />
-                Herói:
-                <Button secondary animated pill standOut on:click={showHeroModal}>Selecionar</Button>
+                {_("Heróis")}:
+                <Button secondary animated pill standOut on:click={showHeroModal}>{_("Selecionar")}</Button>
             </div>
             <div class="opt">
-                Raridade:
+                {_("Raridade")}:
                 <Select options={
                     rarity.results.map((r) => {
                         return {value: r.id, text: r.name, selected: r.name == "Todos"}

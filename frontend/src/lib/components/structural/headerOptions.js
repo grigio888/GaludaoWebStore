@@ -1,27 +1,29 @@
+import { _ } from '$translate/i18n';
+
 export function headerOptions() {
     return [
         {
             link: "/",
             icon: "fa-caret-left",
-            title: "Inicio",
+            title: _("Inicio"),
             onlyMobile: true
         },
         {
             link: "/catalog",
             icon: "fa-map",
-            title: "Catálogo",
+            title: _("Catálogo"),
             onlyMobile: false
         },
         {
             link: "/catalog#search",
             icon: "fa-magnifying-glass",
-            title: "Procurar",
+            title: _("Procurar"),
             onlyMobile: false
         },
         {
             link: "/login",
             icon: "fa-right-to-bracket",
-            title: "Login",
+            title: _("Login"),
             onlyMobile: false
         },
     ]

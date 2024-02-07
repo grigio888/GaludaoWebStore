@@ -12,6 +12,7 @@
     // ---------- IMPORTS ---------- //
     import { createEventDispatcher } from "svelte";
     import { heroModalInfo } from "./store.js";
+    import { _ } from '$translate/i18n';
 
     // ----------- PROPS ----------- //
     export let heroes = [];
@@ -58,7 +59,7 @@
         <i class="fa-solid fa-times" />
     </button>
 
-    <h2>Selecione os Heróis que deseja filtrar:</h2>
+    <h2>{_("Selecione os Heróis que deseja filtrar:")}</h2>
 
     <div class="heroes-layout">
         {#each heroes as hero}
@@ -76,7 +77,7 @@
                 sendInfo = true;
                 closeDialog();
             }}>
-            Confirmar
+            {_("Confirmar")}
         </Button>
         <Button
             animated pill secondary
@@ -84,7 +85,7 @@
                 sendInfo = false;
                 closeDialog();
             }}>
-            Cancelar
+            {_("Cancelar")}
         </Button>
     </div>
 </dialog>

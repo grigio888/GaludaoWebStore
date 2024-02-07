@@ -1,4 +1,7 @@
 <script>
+    // ---------- IMPORTS ---------- //
+    import { _ } from '$translate/i18n';
+    
     // ----------- PROPS ----------- //
     export let pagination;
 
@@ -10,7 +13,7 @@
 <section id="highlights">
     <div class="title">
         <h1>
-            Destaques
+            {_("Destaques")}
         </h1>
         <hr class="vr"/>
     </div>

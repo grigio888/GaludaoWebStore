@@ -9,13 +9,14 @@
 <script>
     // ---------- IMPORTS ---------- //
     import { showModal } from "$comp/default/modal/store.js";
+    import { _ } from '$translate/i18n';
 
     // ----------- PROPS ----------- //
     export let toShow;
 
     // ----------- LOGIC ----------- //
     let contactData = {
-        title: 'Contatos',
+        title: _('Contatos'),
         content: `
         <p>
             Galudão (Toasty)
@@ -27,10 +28,10 @@
         `
     }
     let infoData = {
-        title: 'Informação',
+        title: _('Informação'),
         content: `
         <p>
-            Website em desenvolvimento por:
+            ${_('Website em desenvolvimento por:')}
         </p>
         <br>
         <a href="https://www.linkedin.com/in/vinicius-grigio/" target="_blank">
@@ -45,13 +46,13 @@
         `
     }
     let helpData = {
-        title: 'Ajuda',
+        title: _('Ajuda'),
         content: `
         <p>
-            Precisa de ajuda?
+            ${_('Precisa de ajuda?')}
         </p>
         <p>
-            Entre em contato com os administradores do sistema.
+            ${_("Entre em contato com os administradores do sistema.")}
         </p>
         `
     }
@@ -61,15 +62,15 @@
     <navbar>
         <button class="td-none" on:click={() => showModal(contactData)}>
             <i class="fa-solid fa-envelope" />
-            <span>Contatos</span>
+            <span>{_("Contatos")}</span>
         </button>
         <button class="td-none" on:click={() => showModal(infoData)}>
             <i class="fa-solid fa-circle-info" />
-            <span>Informação</span>
+            <span>{_("Informação")}</span>
         </button>
         <button class="td-none" on:click={() => showModal(helpData)}>
             <i class="fa-solid fa-circle-question" />
-            <span>Ajuda</span>
+            <span>{_("Ajuda")}</span>
         </button>
     </navbar>
 </footer>

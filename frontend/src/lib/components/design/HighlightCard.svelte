@@ -2,6 +2,7 @@
     // ---------- IMPORTS ---------- //
     import { addZeroes } from "$tools/utils";
     import { toggleProduct, cartStore } from "$comp/structural/cart/store";
+    import { _ } from '$translate/i18n';
 
     // ----------- PROPS ----------- //
     export let item;
@@ -34,7 +35,7 @@
         <div class="cta-area">
             {#if item.steam_price}
             <p>
-                R$ {addZeroes(item.steam_price)}
+                {_("R$")} {addZeroes(item.steam_price)}
             </p>
             {/if}
             <Button
@@ -46,7 +47,7 @@
                 {:else}
                     <i class="fa-solid fa-cart-shopping"></i>
                 {/if}
-                <span>R$ {addZeroes(item.store_price)}</span>
+                <span>{_("R$")} {addZeroes(item.store_price)}</span>
             </Button>
         </div>
     </div>

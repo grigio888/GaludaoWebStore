@@ -33,7 +33,7 @@
     export let title = '';
     export let page_url = $page.url.pathname;
     export let image = `${PUBLIC_APP_URL}/static/favicon.png`;    
-    export let description = 'Especializada em trade itens de DOTA 2. Melhor preço sempre.';
+    export let description = `${_("Especializada em trade itens de DOTA 2.")} ${_("Melhor preço sempre.")}`;
     export let keywords = [];
 </script>
 
@@ -50,14 +50,14 @@
     <link rel="apple-touch-icon" href="{ image }">
     <meta name="apple-touch-fullscreen" content="yes">
 
-    <meta property="og:description" content="Loja Galudão WebStore - { description }">
+    <meta property="og:description" content="{_("Loja")} Galudão WebStore - { description }">
     <meta property="og:image" content="{ image }">
     <meta property="og:site_name" content="Galudão WebStore">
     <meta property="og:title" content="Galudão WebStore{ title != '' ? ' - ' + title : '' }">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{ PUBLIC_APP_URL }{ page_url }">
 
-    <meta name="description" content="Loja Galudão WebStore - { description }">
+    <meta name="description" content="{_("Loja")} Galudão WebStore - { description }">
     <meta name="keywords" itemprop="keywords" content="galuda web store, store steam, storesteam, galudaowebstore, galudao store, imortal shop, scorpion shop, store.steam, steam store, imortal shop dota 2, galuão, galudao, dota 2 store, dota store, mthsena, galudao dota 2, itens dota 2, itens dota, site de galudão, dota 2 itens, dota2 store, galudão 2022, steam dota 2 store, contato steam, steam dota 2, collector, collectors, collector's, { keywords.toString() }">
     <link rel="shortcut icon" href="{ image }">
     <link rel="icon" href="{ image }">
@@ -67,6 +67,6 @@
     <meta name="twitter:site" content="@to_replace">
     <meta name="twitter:creator" content="@to_replace">
     <meta name="twitter:title" content="ToReplace{ title != '' ? ' - ' + title : '' }">
-    <meta name="twitter:description" content="Loja Galudão WebStore - { description }">
+    <meta name="twitter:description" content="{_("Loja")} Galudão WebStore - { description }">
     <meta name="twitter:image" content="{ image }">     -->
 </svelte:head>

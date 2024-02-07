@@ -1,6 +1,7 @@
 <script>
     // ---------- IMPORTS ---------- //
     import { cartModalInfo, cartStore, toggleProduct } from "./store.js";
+    import { _ } from "$translate/i18n";
 
     // --------- COMPONENTS -------- //
     import Button from "$comp/default/Button.svelte";
@@ -25,7 +26,7 @@
         <i class="fa-solid fa-times" />
     </button>
 
-    <h2>Carrinho</h2>
+    <h2>{_("Carrinho")}</h2>
 
     <div class="content">
         <div class="items">
@@ -60,13 +61,13 @@
         <div class="subtotal">
             <div class="upper">
                 <div>
-                    <span>Itens:</span>
+                    <span>{_("Itens:")}</span>
                     <span>{totalItems}</span>
                 </div>
                 <hr class="vr">
                 <div>
-                    <span>Subtotal:</span>
-                    <span>R$ {subtotal.toFixed(2)}</span>
+                    <span>{_("Subtotal:")}</span>
+                    <span>{_("R$")} {subtotal.toFixed(2)}</span>
                 </div>
             </div>
             <div>
@@ -76,7 +77,7 @@
                         closeDialog();
                     }}>
                     <i class="fa-solid fa-check" />
-                    Checkout
+                    {_("Finalizar Compra")}
                 </Button>
             </div>
         </div>
@@ -89,7 +90,7 @@
                 closeDialog();
             }}>
             <i class="fa-solid fa-arrow-left" />
-            Voltar às compras
+            {_("Voltar às compras")}
         </Button>
     </div>
 </dialog>
