@@ -8,3 +8,8 @@ node_modules
 !.env.example
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+/db/config.js
+/db/migrations
+/db/models/index.js
+/db/seeders

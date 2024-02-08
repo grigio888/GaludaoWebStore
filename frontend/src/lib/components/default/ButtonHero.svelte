@@ -8,19 +8,6 @@
     // ----------- LOGIC ----------- //
     let dispatch = createEventDispatcher();
 
-    let heroSample = {
-        title: hero,
-        slug: hero.toLowerCase().toLowerCase().replace(' ', '_').replace('-', ''),
-        icon: hero.toLowerCase().toLowerCase().replace(' ', '_').replace('-', '')
-    }
-
-    let image = `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${heroSample.icon}.png`;
-    if (heroSample.icon == 'outros') {
-        image = 'https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d7/Flying_Courier_%28Radiant%29_icon.png'
-    } else if (heroSample.icon == 'cenário') {
-        image = 'https://static.wikia.nocookie.net/dota2_gamepedia/images/8/88/Siltbreaker_Orb_of_Passage_icon.png';
-    }
-
     let active = false;
 </script>
 
@@ -28,10 +15,10 @@
     class:active={active}
     on:click={() => {
         active = !active;
-        dispatch('click', heroSample.slug);
+        dispatch('click', hero.slug);
     }}
     >
-    <img src={image} alt="{heroSample.title}">
+    <img src={hero.imageUrl} alt="{hero.title}">
 </button>
 
 <style lang="scss">
