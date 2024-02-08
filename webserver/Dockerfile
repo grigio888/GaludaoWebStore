@@ -4,12 +4,11 @@ ENV production false
 
 # Copying NGINX files
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY sites-enabled/frontend /etc/nginx/sites-enabled/frontend
-# COPY sites-enabled /etc/nginx/sites-enabled
+COPY sites-enabled /etc/nginx/sites-enabled
 COPY includes /etc/nginx/includes
 COPY templates /etc/nginx/templates
 COPY entrypoint.sh /entrypoint.sh
-COPY static /vol/static
+# COPY static /vol/static
 
 # Copying Certbot files
 # This block must be setup when having access to the server, because

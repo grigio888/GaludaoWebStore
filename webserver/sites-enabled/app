@@ -6,7 +6,7 @@ server {
         return 301 https://www.galudaowebstore.com.br$request_uri;
     }
 
-    include /etc/nginx/includes/frontend.conf;
+    include /etc/nginx/includes/app.conf;
 }
 
 # server {

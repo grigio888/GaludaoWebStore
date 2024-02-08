@@ -30,27 +30,16 @@ services:
     networks:
       - inet
 
-  # backend:
-  #   restart: always
-  #   build:
-  #     context: ./backend
-  #   volumes:
-  #     - ./webserver/static:/vol/static/
-  #   networks:
-  #     - inet
-  #   depends_on:
-  #     - database
-  #     - cache
-  #     - email
-
-  frontend:
+  app:
     restart: always
     build:
-      context: ./frontend
+      context: ./app
     networks:
       - inet
-    # depends_on:
-    #   - backend
+    depends_on:
+      - database
+      - cache
+      - email
 
   webserver:
     restart: always
@@ -65,8 +54,7 @@ services:
     networks:
       - inet
     depends_on:
-      # - backend
-      - frontend
+      - app
 
 networks:
   inet:
