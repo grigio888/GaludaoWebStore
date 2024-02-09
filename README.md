@@ -5,7 +5,6 @@ In order to access the project, you must register the following in your localhos
 
 ```
 # GaludaoWebStore hosts
-127.0.0.1 api.galudaowebstore.local
 127.0.0.1 www.galudaowebstore.local
 127.0.0.1 galudaowebstore.local
 # End of section
@@ -13,7 +12,7 @@ In order to access the project, you must register the following in your localhos
 
 This will allow you to enter the NGINX webserver with the correct local host.
 
-Both backend and frontend are only accessible through NGINX, so it need to be accessed
+The application is only accessible through NGINX, so it need to be accessed
 through those domains above.
 
 # Requirements (Production)

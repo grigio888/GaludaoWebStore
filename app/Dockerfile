@@ -4,12 +4,12 @@ ENV PUBLIC_APP_URL http://www.galudaowebstore.local
 ENV DB_NAME app_development
 ENV DB_USER postgres
 ENV DB_PASS postgres
-ENV DB_HOST localhost
+ENV DB_HOST database
 ENV DB_DIALECT postgres
 
-COPY . /home/frontend
+COPY . /home/app
 
-WORKDIR /home/frontend
+WORKDIR /home/app
 RUN npm install
 
 EXPOSE 3000
